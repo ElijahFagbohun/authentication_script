@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+	display: flex-end;
+	justify-content: center;
+	align-items: center;
+
+}
+.container{
+	float: left;
+	background-color: white;
+	padding: 10px 10px 10px 10px;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+form{
+	width: 30%;
+}
+.reg_pic{
+	 position: fixed;
+	 left: 0;
+	 bottom: 0;
+	 z-index: -1;
+}
+.avatar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+h3{
+	display: flex;
+	color: burlywood;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+label{
+	margin-right: 20px;
+	color: burlywood;
+	text-transform: uppercase;
+}
+input{
+	margin-bottom: 20px;
+    width: 200px;
+	border: none;
+	border-bottom: 3px solid brown;
+	outline: none;
+	height: 30px;
+}
+button{
+	width: 200px;
+	height: 30px;
+	background-color: brown;
+	color: white;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+.fa-user{
+	color: lightgray;
+	left: 100px;
+	top: 300px;
+}
+.fa-lock{
+	color: rgb(132, 115, 33);
+}

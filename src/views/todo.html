@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Create New Todo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="formtodo">
+      <h1>Create new task/todo</h1>
+      <label for="">Description</label>
+      <input type="text" placeholder="Buy a new PS5" name="description" id="desc"/> <br />
+      <label for="">Completed</label>
+      <label for="">True
+          <input type="radio" name="completed" id="compTrue" value="true">
+        </label>
+        <label for="">False
+            <input type="radio" name="completed" id="compFalse" value="false" checked>
+          </label>
+        <br />
+        <div id="todoSuccess"></div>
+      <button type="submit" onclick="saveTodo()">Create</button>
+    </form>
+    <a href="/">Home</a>
+  </body>
+
+  <script>
+      function saveTodo(){
+          event.preventDefault()
+
+          const formTodo = document.getElementById('desc').value
+          const formCompTrue = document.getElementById('compTrue').checked
+          const formCompFalse = document.getElementById('compFalse').checked
+          let formComp = null
+
+          if(formCompTrue){
+                formComp = true
+          }
+          else{
+              formComp = false
+          }
+        var todoElement = document.getElementById("todoSuccess")
+        axios.post('/todo/new', {
+            description: formTodo,
+            completed: formComp
+        })
+            .then((res) => {
+                todoElement.innerHTML = 'Todo saved successfully'
+                console.log(res)
+            },(e)=> {
+                todoElement.innerHTML = responseFail(e)
+                console.log(e)
+            })
+    }
+
+    function responseFail(e){
+        return "Something is wrong somewhere, please try again"
+    }
+  </script>
+</html>

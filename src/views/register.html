@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.css">
+    <link rel="stylesheet" href="register.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="img">
+            <div class="content">
+                <h3>Become One Of Us!</h3>
+                <p>You can Never Go Wrong with Rebot...</p>
+                <a href="Login.html"><button class="btn solid">Sign-In <i class="fa fa-sign-in"></i></button></a>
+            </div>
+            <img src="undraw_Profile_re_4a55 (1).png" class="image" alt="undraw">
+        </div>
+        <div class="forms-container">
+            <div class="sign-up">
+                <form action="/signup" method="POST" class="sign-up-form">
+                    <h2 class="title">Registration Form</h2>
+                    <div class="input-name-box">
+                        <div class="input-field">
+                            <i class="fa fa-user"></i>
+                            <input type="text" placeholder="First name" required name="firstName">
+                        </div>
+                        <div class="input-field">
+                            <i class="fa fa-user"></i>
+                            <input type="text" placeholder="Last name" required name="lastName">
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-users"></i>
+                        <input type="text"  placeholder="Phone Number" required name="phoneNumber">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-users"></i>
+                        <input type="number"  placeholder="Age" required name="age">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email"  placeholder="Enter Your Email Address" required name="email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-lock"></i>
+                        <input type="password"  placeholder="Enter Your Password" name="password">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-users"></i>
+                        <input type="text"  placeholder="Address" name="address">
+                    </div>
+                    <button type="submit" class="btn solid">Submit <i class="fa fa-paper-plane"></i></button>
+                    <p class="social-text"> Or Sign Up with Social Platform</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

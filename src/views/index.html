@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Expanding Cards</title>
+</head>
+<body>
+<div class="container">
+    <div class="panel active" style="background-image: url(davey1.jpg);">
+        <h3>Rebot</h3>
+    </div>
+    <div class="panel" style="background-image: url(davey2.jpg);">
+        <h3>Rebot</h3>
+    </div>
+    <div class="panel" style="background-image: url(davey3.jpg);">
+        <h3>Rebot</h3>
+    </div>
+    <div class="panel" style="background-image: url(davey4.jpg);">
+        <h3>Rebot</h3>
+    </div>
+    <div class="panel" style="background-image: url(davey5.jpg);">
+        <h3>Rebot</h3>
+    </div>
+</div>
+<div class="container">
+    <div id="todoSuccess"></div>
+    <div id="todoError"></div>
+    <button id="getTodos" onclick="getTodos()">Get Todos</button>
+    <a href="/todos">Go to todos</a>
+    <button onclick="logout()">Log out</button>
+    
+</div>
+<script src="script.js"></script>
+<script>
+    function getTodos(){
+        var todoElement = document.getElementById("todoSuccess")
+        axios.get('/alltodos')
+            .then((res) => {
+                todoElement.innerHTML = responseSuccess(res)
+                console.log(res)
+            },(e)=> {
+                todoElement.innerHTML = responseFail(e)
+                console.log(e)
+            })
+    }
+
+    function responseSuccess(res){
+        return '<h1>Successfully fetched tasks</h1>'+
+                '<h3>'+ JSON.stringify(res.data[0], null, '\n') + '</h3>'
+    }
+
+    function responseFail(e){
+        return "Something is wrong somewhere, please try again"
+    }
+    function logout(){
+        axios.post('/user/logout')
+            .then((res) => {
+                window.location.href = '/login'
+            },(e)=> {
+                alert('Logout failed, try again')
+            })
+    }
+</script>
+
+</body>
+</html>

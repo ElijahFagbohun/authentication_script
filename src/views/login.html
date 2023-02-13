@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Login Form</title>
+</head>
+<body>
+     <img class="wave" src="waveblue.png" alt="">
+    <div class="container">
+        <div class="img">
+            <img src="undraw_personalization_triu2.png" alt="undraw">
+        </div>
+        <div class="login-container">
+            <form action="/user/login" method="post">
+                <img class="avatar" src="undraw_profile_pic_ic5t.png" alt="undraw">
+                <h2>Login Form</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div>
+                        <h5>Email</h5>
+                        <input type="text" class="input" name="email" id="email">
+                    </div>    
+                </div>
+                <div class="input-div two">
+                    <div class="i">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Password</h5>
+                        <input type="password" class="input" name="password" id="password">
+                    </div> 
+                </div>
+                <a href="#">Forgot Password</a>
+                <div>
+                    <div id="loginSuccess"></div>
+                    <button type="submit" value="Login">Login<i class="fa fa-paper-plane"></i></button>
+
+                    <!-- <input type="submit" class="btn" value="Login"> -->
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script>
+    //     function login(){
+    //       event.preventDefault()
+
+    //       const email = document.getElementById('email').value
+    //       const password = document.getElementById('password').value
+          
+    //     var loginElement = document.getElementById("loginSuccess")
+    //     axios.post('/user/login', {
+    //         email: email,
+    //         password:password
+    //     })
+    //         .then(() => {
+    //             loginElement.innerHTML = 'Login successful, redirecting....'
+    //             setTimeout(()=> {
+    //                 window.location.href = '/'
+    //             }, 3000)
+    //             console.log(res)
+    //         },(e)=> {
+    //             loginElement.innerHTML = responseFail(e)
+    //             console.log(e)
+    //         })
+    // }
+
+    // function responseFail(e){
+    //     return "Something is wrong somewhere, please try again"
+    // }
+    </script>
+</body>
+</html>
